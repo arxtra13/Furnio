@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Furniro</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+      /* .navbar-brand {
+        font-weight: bold;
+        font-size: 2rem;
+        font-family: "Montserrat", sans-serif;
+      }
+      .logo {
+        height: 2rem;
+        width: auto;
+      } */
+      .navbar {
+        background-color: white;
+        height: 100px;
+      }
+
+      .logo {
+        height: 32px;
+        width: auto;
+        margin-right: 10px;
+      }
+
+      .brand-name {
+        font-weight: bold;
+        font-size: 34px;
+        color: #000000;
+      }
+
+      .navbar-links a {
+        text-decoration: none;
+        color: black;
+        margin: 0 15px;
+        font-weight: 500;
+      }
+
+      .navbar-links a:hover {
+        color: #a58940;
+      }
+
+      .navbar .bi {
+        font-size: 20px;
+        margin: 0 10px;
+        color: black;
+      }
+
+      .navbar .bi:hover {
+        color: #a58940;
+      }
+      .me-3 {
+        height: 28px;
+        width: 100%;
+      }
+
+      .hero {
+        background: url(image/hero_section.jpeg);
+        padding: 50px 0;
+        height: 583.25px;
+        position: relative;
+      }
+      .overlay {
+        background-color: #fff3e3;
+        height: 408px;
+        bottom: 0;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .overlay p {
+        font-size: 18px;
+      }
+      .lh-nav {
+        display: flex;
+        align-items: center;
+      }
+      .hero h1 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+      }
+      .btn-primary {
+        height: 74px;
+        width: 180px;
+        border-radius: 0;
+        background-color: #b88e2f;
+        border-color: #b88e2f;
+      }
+      .our-products h2{
+        font-size: 40px;
+        font-weight: 700;
+      }
+      .product-image {
+        width: 100%;
+        height: 480px;
+        object-fit: cover;
+      }
+      .product-card {
+        margin-bottom: 30px;
+        background-color: #f4f5f7;
+        position: relative;
+        /* overflow: hidden; */
+      }
+      .atc {
+        border: none;
+        background-color: #fff;
+        color: #b88e2f;
+        height: 48px;
+        width: 202px;
+        font-size: 16px;
+        font-weight: 500;
+      }
+      .icons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .icons span {
+        font-size: 16px;
+        padding-left: 2px;
+        font-weight: 500;
+      }
+      .inside {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 0.5rem;
+      }
+      .layer {
+        height: 100%;
+        width: 100%;
+        visibility: hidden;
+        opacity: 0;
+        bottom: 0;
+        position: absolute;
+        overflow: hidden;
+        background: rgba(0, 0, 0, 0.164);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 1.5rem;
+        /* padding-right: 80px; */
+        text-align: center;
+        color: #fff;
+        transition: 0.5s;
+      }
+      .product-card:hover .layer {
+        visibility: visible;
+        opacity: 1;
+      }
+      .showm{
+        color: #b88e2f;
+        border: 1px solid #b88e2f;
+        border-radius: 0;
+        height: 48px;
+        width: 245px;
+      }
+      .details {
+        padding: 1rem;
+      }
+      .product-card img {
+        width: 100%;
+        height: 301px;
+        object-fit: cover;
+      }
+      .icons-layer {
+        height: 10px;
+      }
+      .sale{
+        background-color: #E97171;
+        color: #fff;
+        height: 48px;
+        width: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        border-radius: 50%;
+        top: 15px;
+        right: 15px;
+        padding: 4px 4px;
+      }
+      .new{
+        background-color: #2EC1AC;
+        color: #fff;
+        height: 48px;
+        width: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        border-radius: 50%;
+        top: 15px;
+        right: 15px;
+        padding: 4px 4px;
+      }
+      .rooms-inspiration {
+        background-color: #fcf8f3;
+        padding: 50px 0;
+      }
+      .footer-mid li{
+        padding: 1rem 0;
+        font-size: 16px;
+        
+      }
+      .footer-mid li a{   
+        text-decoration: none;
+        color: #000000;
+        font-weight: 600;
+      }
+      .input-group input{
+        border: none;
+        border-radius: 0;
+        border-bottom: 1px solid black;
+        height: 21px;
+        width: 173px;
+        font-size: 14px;
+        margin-right: 7px;
+        margin-top: 1rem;
+      }
+      .input-group button{
+        height: 21px;
+        font-size: 14px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        border: none;
+        border-bottom: 1px solid black;
+        border-radius: 0;
+        color: #000000;
+        margin-left: 1rem;
+        margin-top: 1rem;
+
+      }
+      footer h4{
+        color: #9F9F9F;
+        font-size: 16px;
+        padding-bottom: 2rem ;
+      }
+      footer h3{
+        font-size: 24px;
+        font-weight: 700;
+        padding-bottom: 2rem;
+      }
+      footer p{
+        color: #9F9F9F;
+        font-size: 16px;
+      }
+      footer {
+        background-color: #fff;
+        padding: 50px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <header class="container-fluid">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container row">
+          <div class="lh-nav col-md-4">
+            <img src="image/logo.jpeg" class="logo" alt="logo" />
+            <a class="navbar-brand" href="#">Furniro</a>
+          </div>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="col-md-4" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item col-md-4">
+                <a class="nav-link" href="#">Home</a>
+              </li>
+              <li class="nav-item col-md-4">
+                <a class="nav-link" href="#">Shop</a>
+              </li>
+              <li class="nav-item col-md-4">
+                <a class="nav-link" href="#">About</a>
+              </li>
+              <li class="nav-item col-md-4">
+                <a class="nav-link" href="#">Contact</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <a href="#" class="me-3"><img src="image/user.svg" alt="User" /></a>
+            <a href="#" class="me-3"
+              ><img src="image/magnifying-glass.svg" alt="Search"
+            /></a>
+            <a href="#" class="me-3"
+              ><img src="image/heart.svg" alt="Favorites"
+            /></a>
+            <a href="#" class="me-3"
+              ><img src="image/shopping-cart.svg" alt="Cart"
+            /></a>
+          </div>
+        </div>
+      </nav>
+    </header> -->
+    <nav class="navbar">
+      <div class="container-fluid">
+        <div class="row align-items-center w-100">
+          
+          <div class="col-4 d-flex align-items-center">
+            <img src="image/logo.jpeg" alt="Logo" class="logo" />
+            <span class="brand-name">Furniro</span>
+          </div>
+
+          
+          <div class="col-4 text-center">
+            <ul class="pt-4 navbar-links">
+              <li class="list-inline-item"><a href="#">Home</a></li>
+              <li class="list-inline-item"><a href="#">Shop</a></li>
+              <li class="list-inline-item"><a href="#">About</a></li>
+              <li class="list-inline-item"><a href="#">Contact</a></li>
+            </ul>
+          </div>
+
+          
+          <div class="col-4 d-flex justify-content-end align-items-center">
+            <a href="#"><i class="bi bi-person"></i></a>
+            <a href="#"><i class="bi bi-search"></i></a>
+            <a href="#"><i class="bi bi-heart"></i></a>
+            <a href="#"><i class="bi bi-cart"></i></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <section class="hero">
+      <div class="container-fluid">
+        <div class="row gx-4">
+          <div class="col-md-6">
+            <p>.</p>
+          </div>
+          <div class="col-md-6 offset-md-6 overlay">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget
+              tellus, faucibus nec ultricies mattis.
+            </p>
+            <button class="btn btn-primary col-md-2 offset">BUY NOW</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="browse-range py-5">
+      <div class="container">
+        <h2 class="text-center mb-4">Browse The Range</h2>
+        <div class="row">
+          <div class="col-md-4 browse-img">
+            <img src="image/dining.jpeg" alt="Dining" class="mb-3" />
+            <h3 class="text-center">Dining</h3>
+          </div>
+          <div class="col-md-4 browse-img">
+            <img src="image/living.jpeg" alt="Living" class="mb-3" />
+            <h3 class="text-center">Living</h3>
+          </div>
+          <div class="col-md-4 browse-img">
+            <img
+              src="image/bedroom.jpeg"
+              alt="Bedroom"
+              class="mb-3 browse-img"
+            />
+            <h3 class="text-center">Bedroom</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="our-products py-5">
+      <div class="container">
+        <h2 class="text-center mb-4">Our Products</h2>
+        <div class="row">
+          <div class="col-md-3 col-sm-6">
+            <div class="product-card">
+              <img
+                src="image/syltherine.jpeg"
+                alt="Sytherine"
+                class="product-image mb-3"
+              />
+              <div class="details">
+                <h4>Sytherine</h4>
+                <p>Stylish cafe chair</p>
+                <p><strong>Rp 2.500.000</strong></p>
+              </div>
+              <div class="layer">
+                <div class="button">
+                  <button class="atc">ADD TO CART</button>
+                </div>
+                <div class="icons">
+                  <div class="inside">
+                    <img
+                      src="image/share-network.svg"
+                      class="icons-layer"
+                      alt="share"
+                      style="height: 16px"
+                    />
+                    <span>Share</span>
+                  </div>
+                  <div class="inside">
+                    <img
+                      src="image/arrows-left-right.svg"
+                      class="icons-layer"
+                      alt="compare"
+                      style="height: 16px"
+                    />
+                    <span>Compare</span>
+                  </div>
+
+                  <div class="inside">
+                    <img
+                      src="image/heart.svg"
+                      class="icons-layer"
+                      alt="Like"
+                      style="height: 16px"
+                    />
+                    <span>Like</span>
+                  </div>
+                </div>
+              </div>
+            <div class="sale">
+              <span>-30%</span>
+            </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="product-card">
+              <img
+                src="image/laviosa.jpeg"
+                alt="Leviosa"
+                class="product-image mb-3"
+              />
+              <div class="details">
+                <h4>Leviosa</h4>
+                <p>Stylish cafe chair</p>
+                <p><strong>Rp 2.500.000</strong></p>
+              </div>
+              <div class="layer">
+                <div class="button">
+                  <button class="atc">ADD TO CART</button>
+                </div>
+                <div class="icons">
+                  <div class="inside">
+                    <img
+                      src="image/share-network.svg"
+                      class="icons-layer"
+                      alt="share"
+                      style="height: 16px"
+                    />
+                    <span>Share</span>
+                  </div>
+                  <div class="inside">
+                    <img
+                      src="image/arrows-left-right.svg"
+                      class="icons-layer"
+                      alt="compare"
+                      style="height: 16px"
+                    />
+                    <span>Compare</span>
+                  </div>
+
+                  <div class="inside">
+                    <img
+                      src="image/heart.svg"
+                      class="icons-layer"
+                      alt="Like"
+                      style="height: 16px"
+                    />
+                    <span>Like</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="product-card">
+              <img
+                src="image/lolito.jpeg"
+                alt="Lolito"
+                class="product-image mb-3"
+              />
+              <div class="details">
+                <h4>Lolito</h4>
+                <p>Luxury big sofa</p>
+                <p><strong>Rp 7.000.000</strong></p>
+              </div>
+              <div class="layer">
+                <div class="button">
+                  <button class="atc">ADD TO CART</button>
+                </div>
+                <div class="icons">
+                  <div class="inside">
+                    <img
+                      src="image/share-network.svg"
+                      class="icons-layer"
+                      alt="share"
+                      style="height: 16px"
+                    />
+                    <span>Share</span>
+                  </div>
+                  <div class="inside">
+                    <img
+                      src="image/arrows-left-right.svg"
+                      class="icons-layer"
+                      alt="compare"
+                      style="height: 16px"
+                    />
+                    <span>Compare</span>
+                  </div>
+
+                  <div class="inside">
+                    <img
+                      src="image/heart.svg"
+                      class="icons-layer"
+                      alt="Like"
+                      style="height: 16px"
+                    />
+                    <span>Like</span>
+                  </div>
+                </div>
+              </div>
+              <div class="sale">
+                <span>-50%</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="product-card">
+              <img
+                src="image/respira.jpeg"
+                alt="Respira"
+                class="product-image mb-3"
+              />
+              <div class="details">
+                <h4>Respira</h4>
+                <p>Outdoor bar table and stool</p>
+                <p><strong>Rp 500.000</strong></p>
+              </div>
+              <div class="layer">
+                <div class="button">
+                  <button class="atc">ADD TO CART</button>
+                </div>
+                <div class="icons">
+                  <div class="inside">
+                    <img
+                      src="image/share-network.svg"
+                      class="icons-layer"
+                      alt="share"
+                      style="height: 16px"
+                    />
+                    <span>Share</span>
+                  </div>
+                  <div class="inside">
+                    <img
+                      src="image/arrows-left-right.svg"
+                      class="icons-layer"
+                      alt="compare"
+                      style="height: 16px"
+                    />
+                    <span>Compare</span>
+                  </div>
+
+
+                  <div class="inside">
+                    <img
+                      src="image/heart.svg"
+                      class="icons-layer"
+                      alt="Like"
+                      style="height: 16px"
+                    />
+                    <span>Like</span>
+                  </div>
+                </div>
+              </div>
+              <div class="new">
+                <span>New</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="product-card">
+              <img
+                src="image/griffo.jpeg"
+                alt="Griffo"
+                class="product-image mb-3"
+              />
+              <div class="details">
+                <h4>Griffo</h4>
+                <p>Outdoor bar table and stool</p>
+                <p><strong>Rp 500.000</strong></p>
+              </div>
+              <div class="layer">
+                <div class="button">
+                  <button class="atc">ADD TO CART</button>
+                </div>
+                <div class="icons">
+                  <div class="inside">
+                    <img
+                      src="image/share-network.svg"
+                      class="icons-layer"
+                      alt="share"
+                      style="height: 16px"
+                    />
+                    <span>Share</span>
+                  </div>
+                  <div class="inside">
+                    <img
+                      src="image/arrows-left-right.svg"
+                      class="icons-layer"
+                      alt="compare"
+                      style="height: 16px"
+                    />
+                    <span>Compare</span>
+                  </div>
+
+                  <div class="inside">
+                    <img
+                      src="image/heart.svg"
+                      class="icons-layer"
+                      alt="Like"
+                      style="height: 16px"
+                    />
+                    <span>Like</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="product-card">
+              <img
+                src="image/muggo.jpeg"
+                alt="Muggo"
+                class="product-image mb-3"
+              />
+              <div class="details">
+                <h4>Muggo</h4>
+                <p>Outdoor bar table and stool</p>
+                <p><strong>Rp 500.000</strong></p>
+              </div>
+              <div class="layer">
+                <div class="button">
+                  <button class="atc">ADD TO CART</button>
+                </div>
+                <div class="icons">
+                  <div class="inside">
+                    <img
+                      src="image/share-network.svg"
+                      class="icons-layer"
+                      alt="share"
+                      style="height: 16px"
+                    />
+                    <span>Share</span>
+                  </div>
+                  <div class="inside">
+                    <img
+                      src="image/arrows-left-right.svg"
+                      class="icons-layer"
+                      alt="compare"
+                      style="height: 16px"
+                    />
+                    <span>Compare</span>
+                  </div>
+
+                  <div class="inside">
+                    <img
+                      src="image/heart.svg"
+                      class="icons-layer"
+                      alt="Like"
+                      style="height: 16px"
+                    />
+                    <span>Like</span>
+                  </div>
+                </div>
+              </div>
+              <div class="new">
+                <span>New</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="product-card">
+              <img
+                src="image/pingky.jpeg"
+                alt="Pingky"
+                class="product-image mb-3"
+              />
+              <div class="details">
+                <h4>Pingky</h4>
+                <p>Outdoor bar table and stool</p>
+                <p><strong>Rp 500.000</strong></p>
+              </div>
+              <div class="layer">
+                <div class="button">
+                  <button class="atc">ADD TO CART</button>
+                </div>
+                <div class="icons">
+                  <div class="inside">
+                    <img
+                      src="image/share-network.svg"
+                      class="icons-layer"
+                      alt="share"
+                      style="height: 16px"
+                    />
+                    <span>Share</span>
+                  </div>
+                  <div class="inside">
+                    <img
+                      src="image/arrows-left-right.svg"
+                      class="icons-layer"
+                      alt="compare"
+                      style="height: 16px"
+                    />
+                    <span>Compare</span>
+                  </div>
+                  <div class="inside">
+                    <img
+                      src="image/heart.svg"
+                      class="icons-layer"
+                      alt="Like"
+                      style="height: 16px"
+                    />
+                    <span>Like</span>
+                  </div>
+                </div>
+              </div>
+              <div class="sale">
+                <span>-50%</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="product-card">
+              <img
+                src="image/potty.jpeg"
+                alt="Potty"
+                class="product-image mb-3"
+              />
+              <div class="details">
+                <h4>Potty</h4>
+                <p>Outdoor bar table and stool</p>
+                <p><strong>Rp 500.000</strong></p>
+              </div>
+              <div class="layer">
+                <div class="button">
+                  <button class="atc">ADD TO CART</button>
+                </div>
+                <div class="icons">
+                  <div class="inside">
+                    <img
+                      src="image/share-network.svg"
+                      class="icons-layer"
+                      alt="share"
+                      style="height: 16px"
+                    />
+                    <span>Share</span>
+                  </div>
+                  <div class="inside">
+                    <img
+                      src="image/arrows-left-right.svg"
+                      class="icons-layer"
+                      alt="compare"
+                      style="height: 16px"
+                    />
+                    <span>Compare</span>
+                  </div>
+                
+                <div class="inside">
+                  <img
+                    src="image/heart.svg"
+                    class="icons-layer"
+                    alt="Like"
+                    style="height: 16px"
+                  />
+                  <span>Like</span>
+                </div>
+              </div>
+            </div>
+            <div class="new">
+              <span>New</span>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-4">
+          <button class="btn btn-outline-primary showm">Show More</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="rooms-inspiration">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <h2>50+ Beautiful rooms inspiration</h2>
+            <p>
+              Our designer already made a lot of beautiful prototypes of rooms
+              that inspire you
+            </p>
+            <button class="btn btn-primary">Explore More</button>
+          </div>
+          <div class="col-md-6">
+            <img
+              src="/api/placeholder/500/400"
+              alt="Room Inspiration"
+              class="img-fluid"
+            />
+          </div>
+          
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="container-fluid">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <h3>Funiro.</h3>
+            <p>
+              400 University Drive Suite 200 Coral Gables,<br />FL 33134 USA
+            </p>
+          </div>
+          <div class="col-md-1 offset-md-1 footer-mid">
+            <h4>Links</h4>
+            <ul class="list-unstyled">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Shop</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-md-2 offset-md-1 ">
+            <h4>Help</h4>
+            <ul class="list-unstyled footer-mid">
+              <li><a href="#">Payment Options</a></li>
+              <li><a href="#">Returns</a></li>
+              <li><a href="#">Privacy Policies</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <h4>Newsletter</h4>
+            <form>
+              <div class="input-group mb-3">
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="Enter Your Email Address"
+                />
+                <button class="btn btn-outline-secondary" type="submit">
+                  SUBSCRIBE
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.9.1/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
